@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Profil Biodata</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9fdfd;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    tr {
+      border-bottom: 2px solid #d0f0f0;
+    }
+    /* Section 1: Menu */
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: linear-gradient(90deg, #98ff98, #add8e6);
+      font-weight: bold;
+    }
+    .menu-left {
+      font-size: 18px;
+    }
+    .menu-right {
+      display: flex;
+      gap: 20px;
+    }
+    .menu-right a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+    .menu-right a:hover {
+      color: #007777;
+    }
+
+    /* Section 2: Header */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .header-text {
+      flex: 1;
+      padding: 20px;
+    }
+    .header-text h1 {
+      margin: 0 0 15px 0;
+      color: #007777;
+    }
+    .header-text p {
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #98ff98;
+      color: #333;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #7ed67e;
+    }
+    .header-img {
+      flex: 1;
+      text-align: center;
+    }
+    .header-img img {
+      max-width: 100%;
+      border-radius: 10px;
+      width: 600px;
+      height: 400px;
+      object-fit: cover;  
+    }
+
+    /* Section 3: Biodata */
+    .biodata {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .biodata h2 {
+      color: #007777;
+      margin-bottom: 10px;
+    }
+    .biodata p {
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    .bio-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .bio-box {
+      border: 2px solid #add8e6;
+      padding: 20px;
+      border-radius: 8px;
+      background: #f0fffa;
+      font-weight: bold;
+    }
+
+    /* Section 4: Portfolio */
+    .portfolio {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .portfolio h2 {
+      color: #007777;
+      margin-bottom: 30px;
+    }
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .project-card {
+      border: 2px solid #add8e6;
+      border-radius: 8px;
+      background: #ffffff;
+      flex: 1 1 calc(33% - 40px);
+      min-width: 220px;
+      padding: 10px;
+    }
+    .project-card img {
+      max-width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      width: 350px;
+      height: 200px;
+    }
+    .project-card h3 {
+      margin: 10px 0 5px;
+    }
+    .project-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+      }
+      .bio-boxes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .project-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Menu -->
+  <table>
+    <tr>
+      <td>
+        <div class="menu">
+          <div class="menu-left">[HOME]</div>
+          <div class="menu-right">
+            <a href="#">[HACKER]</a>
+            <a href="#">[BIODATA]</a>
+            <a href="#">[PORTFOLIO]</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Section 2: Header -->
+  <table>
+    <tr>
+      <td>
+        <div class="header">
+          <div class="header-text">
+            <h1>Selamat Datang di Website Saya</h1>
+            <p>Ini adalah contoh header dengan kolom. Kolom ini berisi teks seperti ini, serta tombol di bawah.</p>
+            <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+          </div>
+          <div class="header-img">
+            <img src="img/profil_img.jpg" alt="Gambar Header">
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Section 3: Biodata -->
+  <table>
+    <tr>
+      <td>
+        <div class="biodata">
+          <h2>About Me</h2>
+          <p>A brand about introduction about myself</p>
+          <div class="bio-boxes">
+            <div class="bio-box">Full Name</div>
+            <div class="bio-box">Education</div>
+            <div class="bio-box">Pekerjaan</div>
+            <div class="bio-box">Contact</div>
+            <div class="bio-box">Hobi</div>
+            <div class="bio-box">Alamat</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Section 4: Portfolio -->
+  <table>
+    <tr>
+      <td>
+        <div class="portfolio">
+          <h2>Portfolio</h2>
+          <div class="portfolio-grid">
+            <div class="project-card">
+              <img src="img/portfolio1.jpg" alt="Project 1">
+              <h3>Project 1</h3>
+              <p>Deskripsi singkat project 1.</p>
+            </div>
+            <div class="project-card">
+              <img src="img/portfolio2.jpg" alt="Project 2">
+              <h3>Project 2</h3>
+              <p>Deskripsi singkat project 2.</p>
+            </div>
+            <div class="project-card">
+              <img src="img/portfolio3.jpeg" alt="Project 3">
+              <h3>Project 3</h3>
+              <p>Deskripsi singkat project 3.</p>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
