@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko_Buku_Pemrograman</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0; /* krem */
+      color: #222; /* hitam */
+    }
+
+    header {
+      background-color: #131312; /* oranye */
+      color: rgb(222, 208, 208);
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .filter {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .filter button {
+      background-color: #222; /* hitam */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .filter button:hover {
+      background-color: #ff7f11; /* oranye */
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      color: #ff7f11;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Toko Buku Pemrograman</h1>
+    <p>Belajar coding lebih mudah dengan buku terbaik</p>
+  </header>
+
+  <div class="filter">
+    <button onclick="filterProducts('all')">Semua</button>
+    <button onclick="filterProducts('web')">Web</button>
+    <button onclick="filterProducts('mobile')">Mobile</button>
+    <button onclick="filterProducts('data')">Data</button>
+    <button onclick="filterProducts('ai')">AI</button>
+  </div>
+
+  <div class="product-list" id="productList">
+    <!-- Produk akan muncul dengan JS -->
+  </div>
+
+  <script>
+    const products = [
+      {
+        name: "Belajar HTML & CSS",
+        price: "Rp 60.000",
+        description: "Dasar pemrograman web modern dengan HTML5 dan CSS3.",
+        image: "https://via.placeholder.com/200x250?text=HTML+CSS",
+        category: "web"
+      },
+      {
+        name: "JavaScript untuk Pemula",
+        price: "Rp 75.000",
+        description: "Panduan lengkap untuk menguasai JavaScript dari nol.",
+        image: "https://via.placeholder.com/200x250?text=JavaScript",
+        category: "web"
+      },
+      {
+        name: "React Native Dasar",
+        price: "Rp 90.000",
+        description: "Membangun aplikasi mobile dengan React Native.",
+        image: "https://via.placeholder.com/200x250?text=React+Native",
+        category: "mobile"
+      },
+      {
+        name: "Kotlin Android Development",
+        price: "Rp 95.000",
+        description: "Belajar membangun aplikasi Android dengan Kotlin.",
+        image: "https://via.placeholder.com/200x250?text=Kotlin",
+        category: "mobile"
+      },
+      {
+        name: "Python untuk Data Science",
+        price: "Rp 120.000",
+        description: "Pengantar data science dengan Python, NumPy, dan Pandas.",
+        image: "https://via.placeholder.com/200x250?text=Python+Data",
+        category: "data"
+      },
+      {
+        name: "Machine Learning dengan Python",
+        price: "Rp 150.000",
+        description: "Belajar konsep dasar hingga implementasi machine learning.",
+        image: "https://via.placeholder.com/200x250?text=Machine+Learning",
+        category: "ai"
+      },
+      {
+        name: "Deep Learning dengan TensorFlow",
+        price: "Rp 180.000",
+        description: "Panduan praktis membangun neural network dengan TensorFlow.",
+        image: "https://via.placeholder.com/200x250?text=TensorFlow",
+        category: "ai"
+      }
+    ];
+
+    const productList = document.getElementById("productList");
+
+    function displayProducts(filter) {
+      productList.innerHTML = "";
+      let filteredProducts = filter === "all" ? products : products.filter(p => p.category === filter);
+
+      filteredProducts.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p class="price">${product.price}</p>
+          <p>${product.description}</p>
+        `;
+        productList.appendChild(card);
+      });
+    }
+
+    function filterProducts(category) {
+      displayProducts(category);
+    }
+
+    // Load semua produk saat pertama kali
+    displayProducts("all");
+  </script>
+
+</body>
+</html>
