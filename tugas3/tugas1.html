@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Profil Biodata</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9fdfd;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    tr {
+      border-bottom: 2px solid #d0f0f0;
+    }
+    /* Section 1: Menu */
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: linear-gradient(90deg, #98ff98, #add8e6);
+      font-weight: bold;
+    }
+    .menu-left {
+      font-size: 18px;
+    }
+    .menu-right {
+      display: flex;
+      gap: 20px;
+    }
+    .menu-right a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+    .menu-right a:hover {
+      color: #007777;
+    }
+
+    /* Section 2: Header */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .header-text {
+      flex: 1;
+      padding: 20px;
+    }
+    .header-text h1 {
+      margin: 0 0 15px 0;
+      color: #007777;
+    }
+    .header-text p {
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #98ff98;
+      color: #333;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #7ed67e;
+    }
+    .header-img {
+      flex: 1;
+      text-align: center;
+    }
+    .header-img img {
+      max-width: 100%;
+      border-radius: 10px;
+      width: 600px;
+      height: 400px;
+      object-fit: cover;  
+    
+    }
+
+    /* Section 3: Biodata */
+    .biodata {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .biodata h2 {
+      color: #007777;
+      margin-bottom: 10px;
+    }
+    .biodata p {
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    .bio-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .bio-box {
+      border: 2px solid #add8e6;
+      padding: 20px;
+      border-radius: 8px;
+      background: #f0fffa;
+      font-weight: bold;
+    }
+
+    /* Section 4: Portfolio */
+    .portfolio {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .portfolio h2 {
+      color: #007777;
+      margin-bottom: 30px;
+    }
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .project-card {
+      border: 2px solid #add8e6;
+      border-radius: 8px;
+      background: #ffffff;
+      flex: 1 1 calc(33% - 40px);
+      min-width: 220px;
+      padding: 10px;
+    }
+    .project-card img {
+      max-width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      width: 350px;
+       height: 200px;
+    }
+    .project-card h3 {
+      margin: 10px 0 5px;
+    }
+    .project-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+      }
+      .bio-boxes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .project-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Menu -->
+  <table>
+    <tr>
+      <td>
+        <div class="menu">
+          <div class="menu-left">[HOME]</div>
+          <div class="menu-right">
+            <a href="#">[HACKER]</a>
+            <a href="#">[BIODATA]</a>
+            <a href="#">[PORTFOLIO]</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Section 2: Header -->
+  <table>
+    <tr>
+      <td>
+        <div class="header">
+          <div class="header-text">
+            <h1><b>Teknologi Informasi</b></h1>
+            <p>Ini adalah contoh header dengan kolom. Kolom ini berisi teks seperti ini, serta tombol di bawah.</p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Pelajari Lebih Lanjut
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Hehehe
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-img">
+            <img src="img/profil_img.jpg" alt="Gambar Header">
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Section 3: Biodata -->
+  <table>
+    <tr>
+      <td>
+        <div class="biodata bio-box">
+          <h2>About Me</h2>
+          <p>A brand about introduction about myself</p>
+          <div class="bio-boxes">
+            <!-- Button trigger modal: Name -->
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalName">
+              Name
+            </button>
+
+            <!-- Modal Name -->
+            <div class="modal fade" id="modalName" tabindex="-1" aria-labelledby="modalNameLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #ffffff; color: #000;">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalNameLabel">Name</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                  </div>
+                  <div class="modal-body">
+                    Faris
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button trigger modal: Education -->
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalEducation">
+              Education
+            </button>
+
+            <!-- Modal Education -->
+            <div class="modal fade" id="modalEducation" tabindex="-1" aria-labelledby="modalEducationLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #ffffff; color: #000;">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalEducationLabel">Education</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                  </div>
+                  <div class="modal-body">
+                    S1 Teknologi Informasi
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button trigger modal: Pekerjaan -->
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalPekerjaan">
+              Pekerjaan
+            </button>
+
+            <!-- Modal Pekerjaan -->
+            <div class="modal fade" id="modalPekerjaan" tabindex="-1" aria-labelledby="modalPekerjaanLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #ffffff; color: #000;">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalPekerjaanLabel">Pekerjaan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                  </div>
+                  <div class="modal-body">
+                    Berkaitan tentang teknologi
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button trigger modal: Contact -->
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalContact">
+              Contact
+            </button>
+
+            <!-- Modal Contact -->
+            <div class="modal fade" id="modalContact" tabindex="-1" aria-labelledby="modalContactLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #ffffff; color: #000;">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalContactLabel">Contact</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                  </div>
+                  <div class="modal-body">
+                    Rahasia
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button trigger modal: Hobi -->
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalHobi">
+              Hobi
+            </button>
+
+            <!-- Modal Hobi -->
+            <div class="modal fade" id="modalHobi" tabindex="-1" aria-labelledby="modalHobiLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #ffffff; color: #000;">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalHobiLabel">Hobi</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                  </div>
+                  <div class="modal-body">
+                    Debat SCD (jk)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button trigger modal: Alamat -->
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalAlamat">
+              Alamat
+            </button>
+
+            <!-- Modal Alamat -->
+            <div class="modal fade" id="modalAlamat" tabindex="-1" aria-labelledby="modalAlamatLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #ffffff; color: #000;">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalAlamatLabel">Alamat</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                  </div>
+                  <div class="modal-body">
+                    Bumi
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Section 4: Portfolio -->
+  <table>
+    <tr>
+      <td>
+        <div class="portfolio">
+          <h2>Portfolio</h2>
+          <div class="portfolio-grid">
+            <div class="project-card">
+              <img src="img/portfolio1.jpg" alt="Project 1">
+              <h3>Project 1</h3>
+              <p>Deskripsi singkat project 1.</p>
+            </div>
+            <div class="project-card">
+              <img src="img/portfolio2.jpg" alt="Project 2">
+              <h3>Project 2</h3>
+              <p>Deskripsi singkat project 2.</p>
+            </div>
+            <div class="project-card">
+              <img src="img/portfolio3.jpeg" alt="Project 3">
+              <h3>Project 3</h3>
+              <p>Deskripsi singkat project 3.</p>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
